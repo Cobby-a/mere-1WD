@@ -1,3 +1,5 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css'%}">
 <h2>Input and text here</h2>
 <form action="counter" method="post">
     {% csrf_token %}
