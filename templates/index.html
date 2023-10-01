@@ -1,10 +1,32 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'style.css'%}">
-<h2>Input and text here</h2>
-<form action="counter" method="post">
-    {% csrf_token %}
-    <textarea name="text" id="" cols="50" rows="20">
-        
-    </textarea><br/>
-    <input type="submit" value="submit">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+</head>
+<body>
+    <h2>Input and text here</h2>
+    <form action="counter" method="post">
+        {% csrf_token %}
+        <textarea name="text" id="" cols="50" rows="20">
+            
+        </textarea><p></p>
+        <input type="submit" value="submit">
+    </form>
+    {% for feat in feature%}
+    <div>
+        <h3>{{feat.author}}</h3>
+        <p>{{feat.about}}</p>
+        <h5>Number or pages: {{feat.pages}}</h5>
+        {% if feat.is_true == True %}
+        <h4>Yes {{feat.is_true}}</h4>
+        {% elif feat.is_true == False %}
+        <h4>Oh, it's false</h4>
+        {% endif %}
+    </div>
+    {%endfor%}
+</body>
+</html>
