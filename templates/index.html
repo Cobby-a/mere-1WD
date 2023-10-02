@@ -21,11 +21,6 @@
         <h3>{{feat.author}}</h3>
         <p>{{feat.about}}</p>
         <h5>Number or pages: {{feat.pages}}</h5>
-        {% if feat.is_true == True %}
-        <h4>Yes {{feat.is_true}}</h4>
-        {% elif feat.is_true == False %}
-        <h4>Oh, it's false</h4>
-        {% endif %}
     </div>
     {%endfor%}
 </body>
