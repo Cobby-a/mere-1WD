@@ -19,3 +19,6 @@ div{
     width: 330px;
     padding: 8px 0 8px 8px;
 }
+.error{
+    color: red;
+}
