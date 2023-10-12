@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="{% static 'style.css'%}">
 </head>
 <body>
+    {% if user.is_authenticated %}
+    <h3>Welcome Back {{user.username}}</h3>
+    {% else %}
+    <h3>
+        Welcome to the landing page <a href="register">Register</a> or <a href="login">Login Here</a>
+    </h3>
+    {% endif %}
     <h2>Input and text here</h2>
     <form action="counter" method="post">
         {% csrf_token %}
