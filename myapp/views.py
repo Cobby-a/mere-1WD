@@ -12,11 +12,6 @@ def index(request):
     return render(request, "index.html", {'feature': featuress})
 
 
-def counter(request):
-    texts = request.POST["text"]
-    number_of_words = len(texts.split())
-    return render(request, "counter.html", {"num": number_of_words})
-
 def register(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -61,3 +56,9 @@ def logout(request):
 
 def post(request, pk):
     return render(request, 'post.html', {'pk':pk})
+
+def counter(request):
+    post = [1, 344, 'bene', 'oxford', 'doom']
+    # texts = request.POST["text"]
+    # number_of_words = len(texts.split())
+    return render(request, "counter.html", {"post": post})
